@@ -1,0 +1,11 @@
+@import url("../../styles/mentor/MentorOverview.css");
+.ao-welcome { background: linear-gradient(110deg, #087b4a 0%, #00a859 62%, #43bd79 100%); }
+.ao-opportunity-list { margin-top: 15px; }
+.ao-opportunity { display: flex; align-items: flex-start; gap: 10px; padding: 14px 0; border-bottom: 1px solid #eff2ef; }
+.ao-opportunity:last-child { border-bottom: 0; }
+.ao-opportunity-icon { width: 35px; height: 35px; flex: 0 0 35px; display: grid; place-items: center; border-radius: 10px; background: #e6f7eb; color: #078747; }
+.ao-opportunity-copy { flex: 1; min-width: 0; }
+.ao-opportunity-copy > span { display: block; color: #078747; font-size: 8px; font-weight: 800; }
+.ao-opportunity-copy strong { display: block; margin-top: 6px; color: #29372e; font-size: 11px; }
+.ao-opportunity-copy small { display: block; margin-top: 5px; color: #849087; font-size: 9px; }
+@media(max-width:620px){.ao-welcome .mo-welcome-art{display:none}}

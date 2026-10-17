@@ -1,122 +1,69 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+
+import Login from "./pages/Login.jsx";
+import CreateAccount from "./pages/CreateAccount.jsx";
+import ForgotPassword from "./pages/ForgotPassword.jsx";
+import BasicDetails from "./pages/BasicDetails.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+
+import StudentStep1 from "./pages/student/StudentStep1.jsx";
+import StudentStep2 from "./pages/student/StudentStep2.jsx";
+import StudentStep3 from "./pages/student/StudentStep3.jsx";
+import StudentStep4 from "./pages/student/StudentStep4.jsx";
+import StudentDashboard from "./pages/student/StudentDashboard.jsx";
+
+import MentorLogin1 from "./pages/mentor/MentorLogin1.jsx";
+import MentorLogin2 from "./pages/mentor/MentorLogin2.jsx";
+import MentorDashboard from "./pages/mentor/MentorDashboard.jsx";
+
+import AlumniLogin1 from "./pages/alumni/AlumniLogin1.jsx";
+import AlumniLogin2 from "./pages/alumni/AlumniLogin2.jsx";
+import AlumniDashboard from "./pages/alumni/AlumniDashboard.jsx";
+import Compete from "./pages/student/Compete";
+import Learning from "./pages/student/Learning";
+import MentorShip from "./pages/student/Mentorship";
+import MentorOverview from "./pages/mentor/MentorOverview";
+import MentorRequests from "./pages/mentor/MentorRequests";
+import MentorStudents from "./pages/mentor/MentorStudents";
+import MentorSessions from "./pages/mentor/MentorSessions";
+import MentorProfile from "./pages/mentor/MentorProfile";
+import MentorSettings from "./pages/mentor/MentorSettings";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/create-account" element={<CreateAccount />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/basic-details" element={<BasicDetails />} />
+      <Route path="/dashboard" element={<Dashboard />} />
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      {/* Student flow */}
+      <Route path="/student/step-1" element={<StudentStep1 />} />
+      <Route path="/student/step-2" element={<StudentStep2 />} />
+      <Route path="/student/step-3" element={<StudentStep3 />} />
+      <Route path="/student/step-4" element={<StudentStep4 />} />
+      <Route path="/student/dashboard" element={<StudentDashboard />} />
+      <Route path="/student/competitions" element={<Compete />} />
+      <Route path="/student/learning" element={<Learning />} />
+      <Route path="/student/mentorship" element={<MentorShip />} />
+      {/* Mentor flow */}
+      <Route path="/mentor/login-1" element={<MentorLogin1 />} />
+      <Route path="/mentor/login-2" element={<MentorLogin2 />} />
+      <Route path="/mentor/dashboard" element={<MentorDashboard />} />
+      <Route path="/mentor/dashboard" element={<MentorOverview />} />
+      <Route path="/mentor/requests" element={<MentorRequests />} />
+      <Route path="/mentor/students" element={<MentorStudents />} />
+      <Route path="/mentor/sessions" element={<MentorSessions />} />
+      <Route path="/mentor/profile" element={<MentorProfile />} />
+      <Route path="/mentor/settings" element={<MentorSettings />} />
+      {/* Alumni flow */}
+      <Route path="/alumni/login-1" element={<AlumniLogin1 />} />
+      <Route path="/alumni/login-2" element={<AlumniLogin2 />} />
+      <Route path="/alumni/dashboard" element={<AlumniDashboard />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,48 @@
+.mses-summary-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; margin-bottom: 17px; }
+.mses-summary { display: flex; align-items: center; gap: 13px; padding: 17px; }
+.mses-summary-icon { width: 42px; height: 42px; flex: 0 0 42px; display: grid; place-items: center; border-radius: 12px; background: #e2f6e8; color: #078747; }
+.mses-summary-icon.purple { background: #f0eaff; color: #7958bd; }
+.mses-summary-icon.blue { background: #e7f1ff; color: #3974ba; }
+.mses-summary small, .mses-summary strong, .mses-summary span:not(.mses-summary-icon) { display: block; }
+.mses-summary small { color: #89948c; font-size: 10px; }
+.mses-summary strong { margin: 4px 0; font-size: 22px; letter-spacing: -.5px; }
+.mses-summary span:not(.mses-summary-icon) { color: #a0aaa3; font-size: 9px; }
+.mses-calendar-strip { padding: 20px 22px; margin-bottom: 17px; }
+.mses-calendar-title { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.mses-calendar-title h3 { margin: 0; font-size: 14px; }
+.mses-calendar-title p { margin: 5px 0 0; color: #8b968e; font-size: 10px; }
+.mses-calendar-arrows { display: flex; gap: 6px; }
+.mses-weekdays, .mses-days { display: grid; grid-template-columns: repeat(7,minmax(0,1fr)); gap: 7px; }
+.mses-weekdays { margin-top: 20px; padding-bottom: 8px; border-bottom: 1px solid #edf1ed; }
+.mses-weekdays span { text-align: center; color: #9aa49d; font-size: 8px; font-weight: 800; letter-spacing: .7px; }
+.mses-days { margin-top: 8px; }
+.mses-days button { min-height: 32px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; border: 1px solid transparent; border-radius: 8px; background: transparent; color: #68756c; font: inherit; font-size: 10px; cursor: pointer; }
+.mses-days button:hover { background: #f3f8f4; }
+.mses-days button.today { border-color: #00a859; color: #078747; font-weight: 800; }
+.mses-days button.has-session { color: #087a42; font-weight: 800; }
+.mses-days button i { width: 4px; height: 4px; border-radius: 50%; background: #00a859; }
+.mses-list-card { padding: 20px 21px 0; }
+.mses-tabs { display: flex; gap: 4px; padding: 4px; border-radius: 9px; background: #f5f8f5; }
+.mses-tabs button { padding: 7px 10px; border: 0; border-radius: 7px; background: transparent; color: #7c887f; font: inherit; font-size: 10px; font-weight: 700; cursor: pointer; }
+.mses-tabs button.active { background: #fff; color: #078747; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+.mses-session-row { display: flex; align-items: center; gap: 12px; padding: 17px 0; border-bottom: 1px solid #edf1ed; }
+.mses-session-row:last-child { border-bottom: 0; }
+.mses-date-tile { width: 47px; min-height: 53px; flex: 0 0 47px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; border-radius: 10px; background: #f0f8f2; color: #087a42; }
+.mses-date-tile span { font-size: 8px; font-weight: 800; letter-spacing: .6px; }
+.mses-date-tile strong { font-size: 19px; }
+.mses-session-main { flex: 1; min-width: 0; }
+.mses-session-main > strong, .mses-session-main > span, .mses-session-main > small { display: block; }
+.mses-session-main > strong { color: #354239; font-size: 11px; }
+.mses-session-main > span { margin-top: 4px; color: #79857d; font-size: 10px; }
+.mses-session-main > small { display: flex; align-items: center; gap: 4px; margin-top: 6px; color: #9aa49d; font-size: 9px; }
+.mses-type { display: inline-flex; align-items: center; gap: 5px; border-radius: 6px; padding: 6px 7px; white-space: nowrap; font-size: 9px; font-weight: 700; }
+.mses-type.video { color: #3974ba; background: #eaf3ff; }
+.mses-type.voice { color: #7958bd; background: #f1ebff; }
+.mses-session-actions { display: flex; align-items: center; gap: 7px; }
+.mses-session-actions .md-btn { min-height: 34px; padding: 0 10px; font-size: 10px; }
+.mses-completed { display: inline-flex; align-items: center; gap: 5px; color: #078747; font-size: 10px; font-weight: 700; }
+.mses-empty { display: flex; flex-direction: column; align-items: center; padding: 35px; color: #89948c; }
+.mses-empty p { font-size: 11px; }
+.mses-modal .mses-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 1000px) { .mses-session-row { flex-wrap: wrap; } .mses-session-actions { width: 100%; justify-content: flex-end; padding-left: 59px; } .mses-type { margin-left: auto; } }
+@media (max-width: 650px) { .mses-summary-grid { grid-template-columns: 1fr; gap: 9px; } .mses-summary { padding: 13px; } .mses-summary-icon { width: 37px; height: 37px; flex-basis: 37px; } .mses-calendar-strip { padding: 16px 12px; } .mses-weekdays, .mses-days { gap: 2px; } .mses-list-card { padding: 16px 13px 0; } .mses-list-card > .md-card-heading { align-items: flex-start; flex-direction: column; } .mses-tabs { width: 100%; } .mses-tabs button { flex: 1; } .mses-session-row { gap: 8px; } .mses-date-tile { width: 40px; flex-basis: 40px; } .mses-session-main { flex-basis: calc(100% - 60px); } .mses-type { margin-left: 48px; } .mses-session-actions { padding-left: 48px; } .mses-session-actions .md-btn { flex: 1; } }

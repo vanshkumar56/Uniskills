@@ -1,0 +1,25 @@
+import { useMemo, useState } from "react";
+import { Search, SlidersHorizontal, Check, X, Clock3, ArrowUpRight, MessageCircle, CheckCircle2, UserRoundPlus } from "lucide-react";
+import AlumniDashboardLayout from "../../components/alumni/AlumniDashboardLayout";
+import "../../styles/alumni/AlumniRequests.css";
+
+const initial = [
+  { id: 1, initials: "AS", name: "Aarav Sharma", course: "B.Tech · 2nd year", college: "GL Bajaj Institute of Technology", topic: "Breaking into frontend development", message: "I'd love to understand how you moved from learning web development to working on real projects. Could you review my portfolio and suggest what I should improve?", skills: ["Frontend", "Portfolio", "Career roadmap"], time: "18 min ago", color: "mint" },
+  { id: 2, initials: "PD", name: "Priya Desai", course: "B.Tech · 3rd year", college: "JSS Academy of Technical Education", topic: "Product-based company internship", message: "I'm preparing for internships and would appreciate advice on resume projects, interview preparation and how to find suitable openings.", skills: ["Internships", "Resume", "Interviews"], time: "1 hour ago", color: "peach" },
+  { id: 3, initials: "RK", name: "Rohan Kumar", course: "B.Tech · 1st year", college: "ABES Engineering College", topic: "Choosing a career path in tech", message: "I am exploring web development, data and AI. I would value an honest perspective on how to explore these areas without spreading myself too thin.", skills: ["Career exploration", "Web development"], time: "Yesterday", color: "lilac" }
+];
+
+export default function AlumniConnections() {
+  const [items, setItems] = useState(initial);
+  const [filter, setFilter] = useState("New");
+  const [search, setSearch] = useState("");
+  const [notice, setNotice] = useState("");
+  const filtered = useMemo(() => items.filter(i => (filter === "All" || (filter === "New" && (!i.status || i.status === "New")) || i.status === filter) && `${i.name} ${i.topic} ${i.skills.join(" ")}`.toLowerCase().includes(search.toLowerCase())), [items, filter, search]);
+  const decide = (id, status) => { setItems(current => current.map(i => i.id === id ? { ...i, status } : i)); setNotice(status === "Connected" ? "Connection accepted. This student is now in your network." : "Connection request declined."); };
+  return <AlumniDashboardLayout title="Student connections" subtitle="Discover students who want to learn from your experience.">
+    {notice && <div className="mr-notice"><CheckCircle2 size={17} />{notice}<button onClick={() => setNotice("")} aria-label="Dismiss"><X size={16} /></button></div>}
+    <section className="md-card mr-toolbar"><div className="mr-tabs">{["New", "Connected", "Declined", "All"].map(t => <button key={t} className={filter === t ? "active" : ""} onClick={() => setFilter(t)}>{t}<span>{t === "New" ? items.filter(i => !i.status || i.status === "New").length : t === "All" ? items.length : items.filter(i => i.status === t).length}</span></button>)}</div><div className="mr-tools"><label className="mr-search"><Search size={17} /><input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search students or topics" /></label><button className="md-btn md-btn-secondary" onClick={() => setSearch("")}><SlidersHorizontal size={16} /> Clear</button></div></section>
+    <div className="mr-results-label"><span>{filtered.length} student requests</span><span>Choose the connections that fit your interests and time.</span></div>
+    <div className="mr-request-list">{filtered.map(i => <article className="md-card mr-request-card" key={i.id}><div className="mr-card-top"><div className={`md-person-avatar ${i.color}`}>{i.initials}</div><div className="mr-student-heading"><h3>{i.name}</h3><span>{i.course} <i /> {i.college}</span></div><span className={`mr-status ${(i.status || "new").toLowerCase()}`}>{i.status || "New"}</span></div><div className="mr-topic-block"><span className="mr-field-label">STUDENT WANTS TO DISCUSS</span><h4>{i.topic}</h4><p>{i.message}</p></div><div className="mr-skills">{i.skills.map(s => <span key={s}>{s}</span>)}</div><div className="mr-card-footer"><div className="mr-request-meta"><span><Clock3 size={14} /> {i.time}</span><span>Student-to-alumni connection</span></div>{(!i.status || i.status === "New") ? <div className="mr-actions"><button className="md-btn md-btn-secondary mr-decline" onClick={() => decide(i.id, "Declined")}><X size={16} /> Decline</button><button className="md-btn md-btn-primary" onClick={() => decide(i.id, "Connected")}><UserRoundPlus size={16} /> Connect</button></div> : <button className="md-btn md-btn-secondary" onClick={() => setNotice(`${i.name} is ${i.status.toLowerCase()}.`)}><ArrowUpRight size={16} /> View status</button>}</div></article>)}{!filtered.length && <div className="md-card mr-empty"><div><MessageCircle size={24} /></div><h3>No student requests found</h3><p>Try another filter or search term.</p><button className="md-btn md-btn-secondary" onClick={() => { setFilter("All"); setSearch(""); }}>Show all requests</button></div>}</div>
+  </AlumniDashboardLayout>;
+}

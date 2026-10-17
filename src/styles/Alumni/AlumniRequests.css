@@ -1,0 +1,38 @@
+.mr-toolbar { padding: 13px 15px; display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+.mr-tabs, .mr-tools { display: flex; align-items: center; gap: 5px; }
+.mr-tabs button { display: inline-flex; align-items: center; gap: 7px; padding: 8px 10px; border: 0; border-radius: 8px; background: transparent; color: #79857c; font: inherit; font-size: 11px; font-weight: 700; cursor: pointer; }
+.mr-tabs button.active { background: #e8f6ed; color: #087a42; }
+.mr-tabs button span { display: grid; place-items: center; min-width: 18px; height: 18px; border-radius: 6px; background: rgba(0,0,0,.045); font-size: 9px; }
+.mr-tabs button.active span { background: #d1efd9; }
+.mr-tools { flex-shrink: 0; }
+.mr-search { width: 235px; }
+.mr-results-label { display: flex; justify-content: space-between; gap: 12px; margin: 19px 2px 12px; color: #87928a; font-size: 10px; }
+.mr-results-label span:first-child { color: #46544a; font-weight: 800; }
+.mr-request-list { display: grid; gap: 13px; }
+.mr-request-card { padding: 20px 21px 0; }
+.mr-card-top { display: flex; align-items: center; gap: 12px; }
+.mr-student-heading { flex: 1; min-width: 0; }
+.mr-student-heading h3 { margin: 0; font-size: 13px; font-weight: 800; }
+.mr-student-heading span { display: flex; align-items: center; gap: 7px; margin-top: 5px; color: #8c978f; font-size: 10px; }
+.mr-student-heading span i { width: 3px; height: 3px; background: #aab4ac; border-radius: 50%; }
+.mr-status { border-radius: 6px; padding: 6px 8px; font-size: 9px; font-weight: 800; }
+.mr-status.new, .mr-status.pending { color: #a76723; background: #fff2e4; }
+.mr-status.connected, .mr-status.accepted { color: #087a42; background: #e6f7eb; }
+.mr-status.declined { color: #a04e4e; background: #fff0f0; }
+.mr-topic-block { margin-top: 18px; }
+.mr-field-label { color: #98a39b; font-size: 9px; font-weight: 800; letter-spacing: 1px; }
+.mr-topic-block h4 { margin: 6px 0 7px; font-size: 14px; font-weight: 800; letter-spacing: -.2px; }
+.mr-topic-block p { margin: 0; max-width: 900px; color: #68756c; font-size: 11px; line-height: 1.75; }
+.mr-skills { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 13px; }
+.mr-skills span { padding: 6px 9px; border-radius: 6px; background: #f3f7f3; color: #647268; font-size: 9px; font-weight: 600; }
+.mr-card-footer { min-height: 61px; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 16px; border-top: 1px solid #eef2ee; }
+.mr-request-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; color: #929d95; font-size: 10px; }
+.mr-request-meta span { display: inline-flex; align-items: center; gap: 5px; }
+.mr-actions { display: flex; align-items: center; gap: 8px; }
+.mr-decline { color: #a55b5b; }
+.mr-empty { display: flex; align-items: center; flex-direction: column; text-align: center; padding: 48px 20px; }
+.mr-empty > div { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 14px; background: #e8f6ed; color: #078747; }
+.mr-empty h3 { margin: 15px 0 5px; font-size: 15px; }
+.mr-empty p { margin: 0 0 15px; color: #87928a; font-size: 11px; }
+@media(max-width:800px){.mr-toolbar{align-items:stretch;flex-direction:column}.mr-tabs{overflow-x:auto}.mr-tabs button{flex-shrink:0}.mr-tools .mr-search{flex:1;width:auto}.mr-card-footer{align-items:flex-start;flex-direction:column;padding:13px 0}.mr-actions{width:100%}.mr-actions .md-btn{flex:1}}
+@media(max-width:520px){.mr-request-card{padding:16px 13px 0}.mr-card-top{align-items:flex-start;gap:9px}.mr-student-heading span{flex-wrap:wrap;line-height:1.5}.mr-status{font-size:8px}.mr-request-meta{gap:8px}.mr-actions .md-btn{padding:0 9px;font-size:10px}.mr-results-label span:last-child{display:none}}

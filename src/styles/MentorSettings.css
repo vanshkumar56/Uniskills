@@ -1,0 +1,47 @@
+.mst-layout { display: grid; grid-template-columns: 225px minmax(0,1fr); gap: 17px; align-items: start; }
+.mst-menu { padding: 17px 10px; position: sticky; top: 20px; }
+.mst-menu-label { display: block; margin: 0 8px 10px; }
+.mst-menu > button { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 43px; padding: 0 10px; border: 0; border-radius: 9px; background: transparent; color: #738076; text-align: left; font: inherit; font-size: 11px; font-weight: 700; cursor: pointer; }
+.mst-menu > button span { flex: 1; }
+.mst-menu > button > svg:last-child { color: #a4ada6; }
+.mst-menu > button:hover { background: #f7faf7; }
+.mst-menu > button.active { background: #e8f6ed; color: #087a42; }
+.mst-menu > button.active > svg:last-child { color: #087a42; }
+.mst-content { min-width: 0; display: grid; gap: 15px; }
+.mst-section { padding: 22px; }
+.mst-section-heading { display: flex; align-items: center; gap: 12px; padding-bottom: 18px; border-bottom: 1px solid #edf1ed; }
+.mst-heading-icon { width: 39px; height: 39px; flex: 0 0 39px; display: grid; place-items: center; border-radius: 11px; background: #e8f6ed; color: #078747; }
+.mst-section-heading h3 { margin: 0; font-size: 14px; }
+.mst-section-heading p { margin: 5px 0 0; color: #87928a; font-size: 10px; }
+.mst-option-list { display: grid; }
+.mst-option { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 17px 0; border-bottom: 1px solid #f0f3f0; }
+.mst-option:last-child { border-bottom: 0; }
+.mst-option > div { min-width: 0; }
+.mst-option strong { display: block; color: #354239; font-size: 11px; font-weight: 700; }
+.mst-option p { margin: 5px 0 0; color: #89948c; font-size: 10px; line-height: 1.5; }
+.mst-switch { width: 39px; height: 23px; flex: 0 0 39px; position: relative; border: 0; border-radius: 20px; background: #dce4dd; cursor: pointer; transition: background .2s; }
+.mst-switch i { position: absolute; top: 3px; left: 3px; width: 17px; height: 17px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.14); transition: transform .2s; }
+.mst-switch.on { background: #00a859; }
+.mst-switch.on i { transform: translateX(16px); }
+.mst-select-label { display: grid; gap: 8px; margin-top: 16px; color: #4f5d53; font-size: 10px; font-weight: 700; }
+.mst-select-label select { min-height: 41px; padding: 0 11px; border: 1px solid #e0e9e2; border-radius: 8px; background: #fff; color: #39473d; font: inherit; font-size: 11px; }
+.mst-info-box { display: flex; align-items: flex-start; gap: 10px; padding: 13px; margin-top: 17px; border-radius: 9px; background: #f3faf5; color: #16804a; }
+.mst-info-box svg { flex-shrink: 0; margin-top: 1px; }
+.mst-info-box p { margin: 0; color: #637669; font-size: 10px; line-height: 1.7; }
+.mst-password-form { display: grid; gap: 14px; padding-top: 18px; }
+.mst-password-form > label { display: grid; gap: 7px; color: #4e5d52; font-size: 10px; font-weight: 700; }
+.mst-password-form input { width: 100%; min-height: 41px; border: 1px solid #e0e9e2; border-radius: 8px; padding: 0 11px; outline: 0; font: inherit; font-size: 11px; }
+.mst-password-form input:focus { border-color: #75cf94; }
+.mst-password-input { display: flex; align-items: center; border: 1px solid #e0e9e2; border-radius: 8px; padding-right: 8px; }
+.mst-password-input input { border: 0; }
+.mst-password-input button { display: grid; place-items: center; border: 0; background: transparent; color: #8a958d; cursor: pointer; }
+.mst-password-form > button { justify-self: start; margin-top: 3px; }
+.mst-danger-zone { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 18px 20px; border-color: #f1dddd; }
+.mst-danger-zone > div { display: flex; align-items: flex-start; gap: 11px; }
+.mst-danger-zone > div > svg { flex-shrink: 0; color: #b75d5d; }
+.mst-danger-zone h3 { margin: 0; font-size: 12px; }
+.mst-danger-zone p { margin: 5px 0 0; color: #8d9690; font-size: 10px; line-height: 1.6; }
+.mst-danger-zone .md-btn { flex-shrink: 0; }
+.mst-save-bottom { justify-self: end; }
+@media (max-width: 850px) { .mst-layout { grid-template-columns: 1fr; } .mst-menu { position: static; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 4px; } .mst-menu-label { grid-column: 1/-1; } }
+@media (max-width: 540px) { .mst-menu { grid-template-columns: 1fr; } .mst-section { padding: 16px; } .mst-option { gap: 10px; } .mst-option p { max-width: 260px; } .mst-danger-zone { align-items: flex-start; flex-direction: column; } .mst-danger-zone .md-btn { width: 100%; } }

@@ -1,0 +1,572 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.student-step-page {
+  --tkt-primary: #00a859;
+  --tkt-primary-dark: #008746;
+  --tkt-primary-light: #e6f6ee;
+  --tkt-surface: #f3f5f8;
+  --tkt-ink: #111827;
+  --tkt-muted: #64748b;
+  --tkt-border: #e2e8f0;
+
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 30px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--tkt-surface);
+  font-family: "DM Sans", sans-serif;
+  color: var(--tkt-ink);
+  box-sizing: border-box;
+}
+
+.student-step-page *,
+.student-step-page *::before,
+.student-step-page *::after {
+  box-sizing: border-box;
+}
+
+.student-step-shell {
+  width: 100%;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.student-step-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+
+.student-step-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+
+.student-step-brand-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--tkt-primary);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.student-step-brand-copy strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--tkt-ink);
+  line-height: 1.2;
+}
+
+.student-step-brand-copy small {
+  display: block;
+  font-size: 10px;
+  color: var(--tkt-muted);
+}
+
+.student-step-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.student-step-progress > span {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--tkt-primary-dark);
+  letter-spacing: 0.05em;
+}
+
+.student-step-progress-track {
+  width: 120px;
+  height: 5px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.student-step-progress-track span {
+  display: block;
+  width: 50%;
+  height: 100%;
+  background: var(--tkt-primary);
+  border-radius: 999px;
+}
+
+.student-step-progress small {
+  font-size: 10px;
+  color: var(--tkt-muted);
+}
+
+.student-step-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px 30px 24px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.student-step-academic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 10px;
+  background: var(--tkt-primary-light);
+  color: var(--tkt-primary-dark);
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.student-step-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tkt-primary);
+}
+
+.student-step-heading h1 {
+  margin: 0 0 6px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--tkt-ink);
+}
+
+.student-step-heading p {
+  margin: 0 0 20px;
+  font-size: 13px;
+  color: var(--tkt-muted);
+  line-height: 1.5;
+}
+
+.student-step-role-tabs {
+  display: flex;
+  gap: 8px;
+  background: #f8fafc;
+  padding: 5px;
+  border-radius: 12px;
+  border: 1px solid var(--tkt-border);
+  margin-bottom: 22px;
+}
+
+.student-step-role-tab {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--tkt-muted);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 180ms ease;
+  font-family: inherit;
+}
+
+.student-step-role-tab:hover {
+  color: var(--tkt-ink);
+}
+
+.student-step-role-tab.active {
+  background: #ffffff;
+  color: var(--tkt-primary-dark);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.student-step-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.student-step-name-grid,
+.student-step-institution-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.student-step-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-step-field label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.student-step-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.student-step-label-row label {
+  margin-bottom: 0;
+}
+
+.student-step-required-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: var(--tkt-primary-dark);
+  font-weight: 600;
+}
+
+.student-step-field input,
+.student-step-select-wrap select {
+  width: 100%;
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--tkt-border);
+  border-radius: 9px;
+  font-size: 12px;
+  color: var(--tkt-ink);
+  background: #fcfdfe;
+  outline: none;
+  transition: all 180ms ease;
+  font-family: inherit;
+}
+
+.student-step-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.student-step-input-wrap svg {
+  position: absolute;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.student-step-email-field .student-step-input-wrap input {
+  padding-right: 38px;
+}
+
+.student-step-email-field .student-step-input-wrap svg {
+  right: 14px;
+}
+
+.student-step-password-field .student-step-input-wrap input {
+  padding-left: 38px;
+  padding-right: 38px;
+}
+
+.student-step-password-field .student-step-input-wrap > svg {
+  left: 14px;
+}
+
+.student-step-input-wrap input:focus,
+.student-step-select-wrap select:focus,
+.student-step-field input:focus {
+  background: #ffffff;
+  border-color: var(--tkt-primary);
+  box-shadow: 0 0 0 3px rgba(0, 168, 89, 0.15);
+}
+
+.student-step-helper {
+  margin: 4px 0 0;
+  font-size: 10px;
+  color: var(--tkt-muted);
+}
+
+.student-step-select-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.student-step-select-wrap select {
+  padding-right: 36px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.student-step-select-wrap svg {
+  position: absolute;
+  right: 12px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.student-step-eye-button {
+  position: absolute;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 4px;
+}
+
+.student-step-eye-button:hover {
+  color: var(--tkt-primary);
+}
+
+.student-step-strength {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--tkt-muted);
+}
+
+.student-step-strength.strength-1,
+.student-step-strength.strength-2 {
+  color: #dc2626;
+}
+
+.student-step-strength.strength-3 {
+  color: #d97706;
+}
+
+.student-step-strength.strength-4 {
+  color: var(--tkt-primary);
+}
+
+.student-step-strength-bars {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.student-step-strength-bars span {
+  flex: 1;
+  height: 4px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  transition: background 180ms ease;
+}
+
+.student-step-strength-bars span.filled {
+  background: var(--tkt-primary);
+}
+
+.student-step-password-requirements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin-top: 8px;
+}
+
+.student-step-password-requirements span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: var(--tkt-muted);
+}
+
+.student-step-password-requirements span.requirement-valid {
+  color: var(--tkt-primary-dark);
+  font-weight: 600;
+}
+
+.student-step-honor {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 2px 0 4px;
+  font-size: 11px;
+  color: var(--tkt-muted);
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.student-step-honor input {
+  accent-color: var(--tkt-primary);
+  margin-top: 2px;
+}
+
+.student-step-honor a {
+  color: var(--tkt-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.student-step-honor a:hover {
+  text-decoration: underline;
+}
+
+.student-step-error {
+  padding: 8px 12px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  font-size: 11px;
+  border-radius: 6px;
+}
+
+.student-step-submit {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--tkt-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 180ms ease, transform 180ms ease;
+  margin-top: 4px;
+}
+
+.student-step-submit:hover:not(:disabled) {
+  background: var(--tkt-primary-dark);
+  transform: translateY(-1px);
+}
+
+.student-step-submit:disabled {
+  opacity: 0.75;
+  cursor: wait;
+}
+
+.student-step-login-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--tkt-border);
+  font-size: 11px;
+  color: var(--tkt-muted);
+}
+
+.student-step-login-footer button {
+  background: transparent;
+  border: none;
+  color: var(--tkt-primary);
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+}
+
+.student-step-footer-spacer {
+  flex: 1;
+}
+
+.student-step-gateway {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+.student-step-page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.student-step-page-footer i {
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  font-style: normal;
+}
+
+.student-step-page-footer span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.student-step-back {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  color: var(--tkt-muted);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 180ms ease;
+}
+
+.student-step-back:hover {
+  color: var(--tkt-primary);
+}
+
+@media (max-width: 640px) {
+  .student-step-card {
+    padding: 24px 18px 20px;
+    border-radius: 20px;
+  }
+
+  .student-step-name-grid,
+  .student-step-institution-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .student-step-role-tabs {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .student-step-page-footer {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .student-step-page-footer i {
+    display: none;
+  }
+}
